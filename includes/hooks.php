@@ -34,7 +34,7 @@ function hilton_render_graph_settings() {
         wp_die(__('You do not have sufficient permissions to access this page.'));
     }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && check_admin_referer('hilton_graph_settings')) {
         update_option('hilton_graph_client_id', sanitize_text_field($_POST['client_id']));
         update_option('hilton_graph_client_secret', sanitize_text_field($_POST['client_secret']));
         update_option('hilton_graph_tenant_id', sanitize_text_field($_POST['tenant_id']));
@@ -47,6 +47,7 @@ function hilton_render_graph_settings() {
 
     echo '<div class="wrap"><h1>Microsoft Graph API Settings</h1>';
     echo '<form method="post"><table class="form-table">';
+    wp_nonce_field('hilton_graph_settings');
     echo '<tr><th>Client ID</th><td><input type="text" name="client_id" value="' . esc_attr($client_id) . '" class="regular-text" required></td></tr>';
     echo '<tr><th>Client Secret</th><td><input type="text" name="client_secret" value="' . esc_attr($client_secret) . '" class="regular-text" required></td></tr>';
     echo '<tr><th>Tenant ID</th><td><input type="text" name="tenant_id" value="' . esc_attr($tenant_id) . '" class="regular-text" required></td></tr>';

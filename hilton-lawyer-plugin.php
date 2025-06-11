@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Hilton Lawyer Scheduler & Invoicer
  * Description: Schedule meetings with optional auto-generated Microsoft Teams links, and send client/lawyer email notifications.
- * Version: 2.2.0
+ * Version: 2.3.0
  * Author: Qwantum Technologies
  */
 
