@@ -192,12 +192,12 @@ echo '</form></div></div>';
 echo '</div>'; // end wrap
 
 // JavaScript for tab switching
-echo '<script>
+echo "<script>
 function showTab(tab) {
-    document.querySelectorAll(".tab-content").forEach(c => c.classList.add("hidden"));
-    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("text-blue-600", "font-medium"));
-    document.getElementById("tab-content-" + tab).classList.remove("hidden");
-    document.getElementById("tab-" + tab).classList.add("text-blue-600", "font-medium");
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('text-blue-600', 'font-medium'));
+    document.getElementById('tab-content-' + tab).classList.remove('hidden');
+    document.getElementById('tab-' + tab).classList.add('text-blue-600', 'font-medium');
 }
 function toggleEditForm(id) {
     document.getElementById('edit-row-' + id).classList.toggle('hidden');
@@ -212,5 +212,5 @@ function toggleMeetingType() {
     document.getElementById('location-field').classList.toggle('hidden', type !== 'offline');
     document.getElementById('link-field').classList.toggle('hidden', type !== 'online');
 }
-showTab("add"); // default tab
-</script>';
+showTab('add'); // default tab
+</script>";
